@@ -20,9 +20,9 @@ class Client
     private $apiKey;
     private $session;
 
-    private $authUrl = 'http://skyvet.dev/app_dev.php/oauth/v2/auth';
+    private $authUrl = 'http://dev.sky.vet/app_dev.php/oauth/v2/auth';
 
-    private $tokenUrl = 'http://skyvet.dev/app_dev.php/oauth/v2/token';
+    private $tokenUrl = 'http://dev.sky.vet/app_dev.php/oauth/v2/token';
 
     const GRANT_TYPE = 'http://sky.vet/grants/api_key';
 
