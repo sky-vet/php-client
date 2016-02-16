@@ -44,8 +44,6 @@ class Client
         $this->clientSecret = $clientSecret;
         $this->apiKey = $apiKey;
         $session = new Session();
-        if (!$session->isStarted())
-            $session->start();
         $this->session = $session;
         $this->setToken(new Token());
     }
