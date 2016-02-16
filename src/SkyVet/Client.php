@@ -30,7 +30,7 @@ class Client
 
     const ENDPOINT_TURNOS = '/turnos';
 
-    const BASE_URL = 'http://skyvet.dev/app_dev.php/api/v1';
+    const BASE_URL = 'http://dev.sky.vet/api/v1';
 
     /**
      * Client constructor.
