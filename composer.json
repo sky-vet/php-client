@@ -1,4 +1,6 @@
 {
+    "name": "skyvet/php-client",
+    "description": "Cliente PHP para la API de SkyVet",
     "require": {
         "shuber/curl": "^1.0",
         "guzzlehttp/guzzle": "^6.1",
