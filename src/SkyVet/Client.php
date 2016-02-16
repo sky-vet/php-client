@@ -9,6 +9,7 @@
 namespace SkyVet;
 
 use SkyVet\Model\Turno;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class Client
@@ -219,6 +220,24 @@ class Client
             if (isset($obj->id))
                 $turno->setId($obj->id);
         }
+    }
+
+    /**
+     * @param $id
+     */
+    public function deleteTurno($id)
+    {
+        $accessToken = $this->getAccessToken();
+        $url = self::BASE_URL . self::ENDPOINT_TURNOS . '/' . $id;
+        $client = new \GuzzleHttp\Client(array(
+            'query' => array(
+                'access_token' => $accessToken
+            )
+        ));
+        $data = $client->request(Request::METHOD_DELETE, $url)
+            ->getBody()->getContents()
+        ;
+        var_dump($data);
     }
 
     /**
