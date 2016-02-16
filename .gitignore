@@ -1,0 +1,4 @@
+vendor
+composer.phar
+examples/init.inc.php
+.idea

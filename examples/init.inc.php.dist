@@ -1,0 +1,7 @@
+<?php
+
+include '../vendor/autoload.php';
+
+define('CLIENT_ID', 'your_client_id');
+define('CLIENT_SECRET', 'your_client_secret');
+define('API_KEY','your_api_key');
