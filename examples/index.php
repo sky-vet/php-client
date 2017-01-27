@@ -1,6 +1,6 @@
 <?php
-
-include('init.inc.php');
+include '../vendor/autoload.php';
+include 'init.inc.php';
 
 $client = new \SkyVet\Client(CLIENT_ID, CLIENT_SECRET, API_KEY);
 

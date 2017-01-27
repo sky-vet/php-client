@@ -1,19 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Hormiga
- * Date: 14/02/2016
- * Time: 12:58 PM
- */
-
 namespace SkyVet;
 
-
+/**
+ * Class Token
+ *
+ * @package SkyVet
+ */
 class Token
 {
-
     /**
-     * @var string
+     * @var string|null
      */
     private $accessToken = null;
 
@@ -23,7 +19,7 @@ class Token
     private $refreshToken;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      */
     private $expirationDate = null;
 
@@ -37,6 +33,8 @@ class Token
 
     /**
      * @param string $accessToken
+     *
+     * @return void
      */
     public function setAccessToken($accessToken)
     {
@@ -53,6 +51,8 @@ class Token
 
     /**
      * @param string $refreshToken
+     *
+     * @return void
      */
     public function setRefreshToken($refreshToken)
     {
@@ -69,30 +69,39 @@ class Token
 
     /**
      * @param \DateTime $expirationDate
+     *
+     * @return void
      */
-    public function setExpirationDate($expirationDate)
+    public function setExpirationDate(\DateTime $expirationDate)
     {
         $this->expirationDate = $expirationDate;
     }
 
+    /**
+     * @return bool
+     */
     public function isExpired()
     {
-
         $then = $this->getExpirationDate();
-        if ($then === null)
-        {
+
+        if ($then === null) {
             return true;
         }
+
         $now = new \DateTime();
-        if ($now >= $then)
+
+        if ($now >= $then) {
             return true;
-        else
-            return false;
+        }
+
+        return false;
     }
 
+    /**
+     * @return bool
+     */
     public function isEmpty()
     {
         return is_null($this->getAccessToken());
     }
-
 }

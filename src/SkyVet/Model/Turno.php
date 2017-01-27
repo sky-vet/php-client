@@ -1,11 +1,13 @@
 <?php
-
 namespace SkyVet\Model;
 
-
+/**
+ * Class Turno
+ *
+ * @package SkyVet\Model
+ */
 class Turno
 {
-
     /**
      * @var integer|null
      */
@@ -33,18 +35,18 @@ class Turno
 
     /**
      * Turno constructor.
+     *
      * @param array $options
      */
-    public function __construct($options = array())
+    public function __construct($options = [])
     {
-
-        $defaults = array(
+        $defaults = [
             'telefono' => '',
             'nombre' => '',
             'comentarios' => '',
             'id' => null,
             'date' => new \DateTime()
-        );
+        ];
 
         $options = array_merge($defaults, $options);
 
@@ -53,7 +55,6 @@ class Turno
         $this->setComentarios($options['comentarios']);
         $this->setId($options['id']);
         $this->setDate($options['date']);
-
     }
 
     /**
@@ -66,8 +67,10 @@ class Turno
 
     /**
      * @param \DateTime $date
+     *
+     * @return void
      */
-    public function setDate($date)
+    public function setDate(\DateTime $date)
     {
         $this->date = $date;
     }
@@ -82,6 +85,8 @@ class Turno
 
     /**
      * @param string $nombre
+     *
+     * @return void
      */
     public function setNombre($nombre)
     {
@@ -98,6 +103,8 @@ class Turno
 
     /**
      * @param string $telefono
+     *
+     * @return void
      */
     public function setTelefono($telefono)
     {
@@ -114,6 +121,8 @@ class Turno
 
     /**
      * @param string $comentarios
+     *
+     * @return void
      */
     public function setComentarios($comentarios)
     {
@@ -130,10 +139,11 @@ class Turno
 
     /**
      * @param int|null $id
+     *
+     * @return void
      */
     public function setId($id)
     {
         $this->id = $id;
     }
-
 }
